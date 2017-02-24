@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@android:color/black"
+    tools:context=".AlarmVisualActivity" >
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@android:color/transparent"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/avm_dismiss_textview"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_flat_transparent"
+            android:gravity="fill_vertical|center_horizontal"
+            android:text="@string/dismiss_label"
+            android:textColor="@android:color/holo_blue_bright"
+            android:textSize="50sp" >
+
+        </TextView>
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/avm_info_textview"
+                android:textIsSelectable="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:bufferType="spannable"
+                android:fadeScrollbars="true"
+                android:gravity="center_horizontal"
+                android:textColor="#ffffff" >
+            </TextView>
+
+            <ListView
+                android:id="@+id/avm_listview"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:dividerHeight="0dp" >
+            </ListView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/holo_blue_bright" >
+
+            <TextView
+                android:id="@+id/cl_title"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:gravity="right|center_vertical"
+                android:text="@string/snooze_duration_label"
+                android:textColor="@android:color/black"
+                android:textSize="18sp" >
+
+            </TextView>
+
+            <Spinner
+                android:id="@+id/avm_snooze_spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:entries="@array/alarm_snooze_entries" >
+
+            </Spinner>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/avm_snooze_textview"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_flat_transparent"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="@string/snooze_label"
+            android:textColor="@android:color/holo_blue_bright"
+            android:textSize="50sp" >
+        </TextView>
+    </LinearLayout>
+
+</LinearLayout>

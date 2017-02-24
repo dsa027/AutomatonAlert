@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:tools="http://schemas.android.com/tools"
+                    android:id="@+id/ru_main_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:context=".Fragment.RTUpdateActivity">
+
+        <TextView
+            android:id="@+id/rcli_dropdown_aligner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:gravity="bottom|left"
+            android:paddingRight="8dp"
+            android:paddingLeft="0dp"
+            android:text="@string/silent_mode_label"
+            android:textAppearance="@android:style/TextAppearance.Medium"
+            android:visibility="invisible" />
+
+        <LinearLayout
+            android:id="@+id/ru_ringtone_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/ru_ringtone"
+                style="@android:style/Widget.Holo.Light.Spinner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="4dp"
+                android:hint="@string/choose_ringtone_label"
+                android:maxLines="1"
+                android:textAppearance="@android:style/TextAppearance.Large"
+                android:textColor="@android:color/holo_blue_dark"
+                android:textColorHint="@android:color/holo_blue_dark" />
+
+            <View
+                android:id="@+id/ru_init_values_spacer"
+                android:layout_width="match_parent"
+                android:layout_height="12dp"
+                android:visibility="gone"
+                />
+
+        </LinearLayout>
+
+        <Spinner
+            android:id="@+id/ru_spinner_silent_mode"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ru_ringtone_layout"
+            android:layout_marginRight="8dp"
+            android:layout_toRightOf="@id/rcli_dropdown_aligner"
+            android:entries="@array/ringtone_silent_mode_other" />
+
+        <Spinner
+            android:id="@+id/ru_spinner_play_for"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ru_spinner_silent_mode"
+            android:layout_marginRight="8dp"
+            android:layout_toRightOf="@id/rcli_dropdown_aligner"
+            android:entries="@array/stop_sound_after_entries" />
+
+        <Spinner
+            android:id="@+id/ru_spinner_vibrate"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ru_spinner_play_for"
+            android:layout_marginRight="8dp"
+            android:layout_toRightOf="@id/rcli_dropdown_aligner"
+            android:alpha=".8"
+            android:entries="@array/ringtone_vibrate_mode" />
+
+        <Spinner
+            android:id="@+id/ru_spinner_notification"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ru_spinner_vibrate"
+            android:layout_marginRight="8dp"
+            android:layout_toRightOf="@id/rcli_dropdown_aligner"
+            android:entries="@array/ringtone_notification" />
+
+        <Spinner
+            android:id="@+id/ru_spinner_led"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ru_spinner_notification"
+            android:layout_marginRight="8dp"
+            android:layout_toRightOf="@id/rcli_dropdown_aligner"
+            android:entries="@array/ringtone_led" />
+
+        <TextView
+            android:id="@+id/ru_silent_mode_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/ru_spinner_silent_mode"
+            android:layout_alignLeft="@id/rcli_dropdown_aligner"
+            android:layout_alignTop="@id/ru_spinner_silent_mode"
+            android:layout_below="@id/ru_ringtone_layout"
+            android:gravity="center_vertical|right"
+            android:text="@string/silent_mode_label"
+            android:textAppearance="@android:style/TextAppearance.Medium" />
+
+        <TextView
+            android:id="@+id/ru_play_for_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/ru_spinner_play_for"
+            android:layout_alignLeft="@id/rcli_dropdown_aligner"
+            android:layout_alignRight="@id/ru_silent_mode_header"
+            android:layout_alignTop="@id/ru_spinner_play_for"
+            android:gravity="center_vertical|right"
+            android:text="@string/play_for_label"
+            android:textAppearance="@android:style/TextAppearance.Medium" />
+
+        <TextView
+            android:id="@+id/ru_vibrate_mode_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/ru_spinner_vibrate"
+            android:layout_alignLeft="@id/rcli_dropdown_aligner"
+            android:layout_alignRight="@id/ru_silent_mode_header"
+            android:layout_alignTop="@id/ru_spinner_vibrate"
+            android:gravity="center_vertical|right"
+            android:text="@string/vibrate_label"
+            android:textAppearance="@android:style/TextAppearance.Medium" />
+
+        <TextView
+            android:id="@+id/ru_notification_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/ru_spinner_notification"
+            android:layout_alignLeft="@id/rcli_dropdown_aligner"
+            android:layout_alignRight="@id/ru_silent_mode_header"
+            android:layout_alignTop="@id/ru_spinner_notification"
+            android:gravity="center_vertical|right"
+            android:text="@string/notification_label"
+            android:textAppearance="@android:style/TextAppearance.Medium" />
+
+        <TextView
+            android:id="@+id/ru_led_mode_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/ru_spinner_led"
+            android:layout_alignLeft="@id/rcli_dropdown_aligner"
+            android:layout_alignRight="@id/ru_silent_mode_header"
+            android:layout_alignTop="@id/ru_spinner_led"
+            android:gravity="center_vertical|right"
+            android:text="@string/light_label"
+            android:textAppearance="@android:style/TextAppearance.Medium" />
+
+        <RelativeLayout
+            android:id="@+id/ru_bottom"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ru_led_mode_header" >
+
+            <ImageButton
+                android:id="@+id/ru_volume_dial"
+                android:layout_width="128dp"
+                android:layout_height="128dp"
+                android:layout_centerHorizontal="true"
+                android:adjustViewBounds="true"
+                android:background="@drawable/volume_circle_default_with_text"
+                android:scaleType="fitCenter"
+                android:contentDescription="@string/volume_dial_label"/>
+
+            <Button
+                android:id="@+id/rutest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/ru_volume_dial"
+                android:layout_alignParentRight="true"
+                android:layout_margin="8dp"
+                android:background="@android:drawable/dialog_holo_light_frame"
+                android:padding="16dp"
+                android:text="@string/test_exclamation_point_label"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <ImageButton
+                android:id="@+id/ru_clear"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_alignBottom="@id/rutest"
+                android:layout_alignParentLeft="true"
+                android:background="@drawable/delete_bin"
+                android:contentDescription="@string/ru_update_fragment_clear_ringtone_button_label"/>
+
+            <Button
+                android:id="@+id/ru_accounts"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_below="@id/ru_volume_dial"
+                android:background="@android:drawable/dialog_holo_light_frame"
+                android:textColor="@android:color/holo_blue_dark"
+                android:text="@string/ru_update_fragment_accounts_button_label"
+                android:lines="1"
+                android:maxLines="2"/>
+
+
+            <TextView
+                android:id="@+id/ru_account_list"
+                android:textIsSelectable="true"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ru_accounts"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginRight="16dp"/>
+        </RelativeLayout>
+    </RelativeLayout>
+</ScrollView>

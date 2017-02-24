@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:orientation="horizontal"
+	android:id="@+id/pcd_linearlayout" android:layout_height="fill_parent" android:background="#303030">
+	<TextView android:id="@+id/pcd_textview"
+		android:layout_height="wrap_content" android:text="@string/search_set_label"
+		android:layout_gravity="left|center_vertical" android:layout_weight="3"
+		android:paddingLeft="10dp" android:layout_width="wrap_content" android:textColor="#c0c0c0"></TextView>
+	<Button android:id="@+id/pcd_contacts_button"
+		android:layout_gravity="center_horizontal|center_vertical" android:layout_weight="1"
+		android:background="@drawable/button_flat" android:text="@string/contacts_label" android:gravity="center_vertical|center_horizontal" android:layout_height="30dp" android:layout_marginRight="10dp" android:layout_width="45dp" android:textColor="#000000"></Button>
+	<Button android:id="@+id/pcd_delete_button"
+		android:layout_gravity="right|center_vertical" android:layout_weight="1"
+		android:background="@drawable/button_flat" android:text="@string/delete_label" android:gravity="center_vertical|center_horizontal" android:layout_height="30dp" android:layout_width="30dp" android:layout_marginRight="10dp" android:textColor="#000000"></Button>
+
+</LinearLayout>

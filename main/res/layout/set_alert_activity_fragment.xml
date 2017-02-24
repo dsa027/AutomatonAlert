@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbarStyle="insideOverlay"
+            tools:context=".SetAlertActivity" >
+
+    <LinearLayout
+        android:id="@+id/sawru_main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/sawru_rtprefs_info"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@android:color/holo_blue_dark"
+            android:textColor="@android:color/white"
+            android:text="@string/rupf_default_text_info"
+            android:gravity="center"
+            />
+
+        <LinearLayout
+            android:id="@+id/sawru_alarm_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/sawru_set_alarm_header"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rectangle_gradient_small"
+                android:text="@string/alarm_label"
+                android:textColor="@android:color/holo_blue_dark" />
+
+            <LinearLayout
+                android:id="@+id/sawru_datetime_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:id="@+id/sawru_datetime"
+                    style="@android:style/Widget.Holo.Light.Spinner"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="8dp"
+                    android:hint="@string/set_alarm_date_and_time_label"
+                    android:maxLines="1"
+                    android:textAppearance="@android:style/TextAppearance.Large"
+                    android:textColor="@android:color/holo_blue_dark"
+                    android:textColorHint="@android:color/holo_blue_dark" />
+
+                <Button
+                    android:id="@+id/sawru_clear"
+                    style="@android:style/Widget.Holo.ImageButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@android:drawable/dialog_holo_light_frame"
+                    android:text="@string/clear_label"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/sawru_repeat_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/sawru_aligner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center_vertical"
+                    android:lines="2"
+                    android:text="@string/set_alert_activity_show_alarm_screen_must_have_spaces_label"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:visibility="invisible" />
+
+                <Spinner
+                    android:id="@+id/sawru_repeat_every"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_toRightOf="@id/sawru_aligner"
+                    android:entries="@array/alarm_repeat_entries" />
+
+                <Spinner
+                    android:id="@+id/sawru_stop_after"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/sawru_repeat_every"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_toRightOf="@id/sawru_aligner"
+                    android:entries="@array/alarm_stop_after_entries" />
+
+                <TextView
+                    android:id="@+id/sawru_repeat_every_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/sawru_repeat_every"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignRight="@id/sawru_aligner"
+                    android:layout_alignTop="@id/sawru_repeat_every"
+                    android:layout_below="@id/sawru_repeat_every"
+                    android:gravity="right|center_vertical"
+                    android:text="@string/repeat_every_label"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <TextView
+                    android:id="@+id/sawru_stop_after_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/sawru_stop_after"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignRight="@id/sawru_aligner"
+                    android:layout_alignTop="@id/sawru_stop_after"
+                    android:layout_below="@id/sawru_repeat_every"
+                    android:layout_gravity="top"
+                    android:gravity="right|center_vertical"
+                    android:text="@string/stop_after_label"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <Switch
+                    android:id="@+id/sawru_show_alarm_screen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/sawru_stop_after"
+                    android:layout_below="@id/sawru_stop_after"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_toRightOf="@id/sawru_aligner"
+                    android:checked="true"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <TextView
+                    android:id="@+id/sawru_show_alarm_screen_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/sawru_show_alarm_screen"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignRight="@id/sawru_aligner"
+                    android:layout_below="@id/sawru_stop_after"
+                    android:gravity="center_vertical|right"
+                    android:lines="2"
+                    android:text="@string/show_alarm_newline_screen_label"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/rt_separator_header"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/rectangle_gradient_small"
+                android:text="@string/ringtone_label"
+                android:textColor="@android:color/holo_blue_dark" />
+        </LinearLayout>
+
+        <include layout="@layout/rt_update_fragment" />
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ffaf_main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/ffaf_phrase"
+        style="@android:style/Widget.Holo.Light.Spinner"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:hint="@string/set_free_form_data_label"
+        android:maxLines="1"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textColorHint="@android:color/holo_blue_dark" />
+
+    <RelativeLayout
+        android:id="@+id/ffaf_repeat_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/ffaf_header_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="8dp"
+            android:text="In:"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textAppearance="@android:style/TextAppearance.Medium"
+            />
+
+        <CheckBox
+            android:id="@+id/ffaf_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="4dp"
+            android:layout_alignBaseline="@id/ffaf_header_label"
+            android:layout_toRightOf="@id/ffaf_header_label"
+            android:text="All"
+            />
+
+        <CheckBox
+            android:id="@+id/ffaf_from"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/ffaf_all"
+            android:layout_alignBaseline="@id/ffaf_all"
+            android:layout_marginRight="2dp"
+            android:text="From"
+            />
+
+        <CheckBox
+            android:id="@+id/ffaf_to"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/ffaf_from"
+            android:layout_alignBaseline="@id/ffaf_all"
+            android:layout_marginRight="10dp"
+            android:text="To"
+            />
+
+        <CheckBox
+            android:id="@+id/ffaf_subject"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/ffaf_to"
+            android:layout_alignBaseline="@id/ffaf_all"
+            android:text="Subject"
+            />
+
+        <CheckBox
+            android:id="@+id/ffaf_cc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/ffaf_all"
+            android:layout_below="@+id/ffaf_from"
+            android:text="Cc"
+            />
+
+        <CheckBox
+            android:id="@+id/ffaf_bcc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/ffaf_from"
+            android:layout_below="@+id/ffaf_to"
+            android:layout_alignBaseline="@id/ffaf_cc"
+            android:text="Bcc"
+            />
+
+        <CheckBox
+            android:id="@+id/ffaf_sms_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/ffaf_bcc"
+            android:layout_below="@+id/ffaf_subject"
+            android:layout_alignLeft="@+id/ffaf_subject"
+            android:layout_alignBaseline="@id/ffaf_cc"
+            android:text="Text Msg"
+            />
+
+    </RelativeLayout>
+
+</LinearLayout>
+

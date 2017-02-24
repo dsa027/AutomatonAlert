@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_blue_dark"
+        >
+
+        <TextView
+            android:id="@+id/exit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="2dp"
+            android:layout_marginLeft="2dp"
+            android:text="@string/exit_uc_label"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            />
+
+        <TextView
+            android:id="@+id/next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="2dp"
+            android:layout_marginRight="2dp"
+            android:text="@string/next_greater_than_symbol_label"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            />
+
+        <LinearLayout
+            android:id="@+id/tp1_dots"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:layout_centerHorizontal="true"
+            >
+            <ImageView
+                android:id="@+id/tp1_dot_page_1"
+                android:layout_width="10dp"
+                android:layout_height="16dp"
+                android:src="@drawable/tour_dots_on"
+                android:contentDescription="@string/page_1_label"/>
+            <ImageView
+                android:id="@+id/tp1_dot_page_2"
+                android:layout_width="10dp"
+                android:layout_height="16dp"
+                android:src="@drawable/tour_dots_off"
+                android:contentDescription="@string/cd_ignore"/>
+            <ImageView
+                android:id="@+id/tp1_dot_page_3"
+                android:layout_width="10dp"
+                android:layout_height="16dp"
+                android:src="@drawable/tour_dots_off"
+                android:contentDescription="@string/cd_ignore"/>
+            <ImageView
+                android:id="@+id/tp1_dot_page_4"
+                android:layout_width="10dp"
+                android:layout_height="16dp"
+                android:src="@drawable/tour_dots_off"
+                android:contentDescription="@string/cd_ignore"/>
+            <ImageView
+                android:id="@+id/tp1_dot_page_5"
+                android:layout_width="10dp"
+                android:layout_height="16dp"
+                android:src="@drawable/tour_dots_off"
+                android:contentDescription="@string/cd_ignore"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tp1_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tp1_dots"
+            android:layout_marginBottom="12dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:text="@string/tour_page_new_contacts_tab_title"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#ffffff"
+            android:textSize="24sp"
+            />
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tp1_title"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_centerHorizontal="true"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/cd_new_contact_screenshot"/>
+
+        <View
+            android:id="@+id/tp1_separator"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:layout_below="@id/image"
+            android:background="#e5e5e5"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tp1_separator"
+            android:layout_alignParentBottom="true"
+            android:background="#ffffff"
+            >
+
+            <TextView
+                android:id="@+id/tp1_grey_icons_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/tour_page_ringtone_icons_title"
+                android:textColor="@android:color/holo_blue_dark"
+                />
+
+            <LinearLayout
+                android:id="@+id/tp1_grey_icons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tp1_grey_icons_title"
+                android:layout_centerHorizontal="true"
+                >
+
+                <ImageView
+                    android:id="@+id/tp1_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/android_messages_grey_64"
+                    android:contentDescription="@string/text_ringtone_label"/>
+                <ImageView
+                    android:id="@+id/tp1_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/android_phone_grey_64"
+                    android:contentDescription="@string/phone_ringtone_label"/>
+                <ImageView
+                    android:id="@+id/tp1_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/android_email_blue_grey_64"
+                    android:contentDescription="@string/email_ringtone_label"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tp1_grey_icons_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_below="@id/tp1_grey_icons"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/tour_page_contact_new_how_to_add_ringtone"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/holo_blue_dark"
+                />
+
+            <TextView
+                android:id="@+id/tp1_grey_icons_explanation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tp1_grey_icons_text"
+                android:gravity="center"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:text="@string/exactly_grey_indicates_no_ringtone"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@android:color/holo_blue_dark"
+                />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</ScrollView>

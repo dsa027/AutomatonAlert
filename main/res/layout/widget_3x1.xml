@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="220dp"
+    android:layout_height="72dp"
+    android:background="#000000"
+    android:orientation="horizontal">
+    <LinearLayout
+        android:id="@+id/w3x1_ll_frame"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/button_flat_transparent"
+        android:padding="6dp" >
+        <ImageView
+            android:id="@+id/w3x1_iv1"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_weight="1"
+            android:contentDescription="@string/silence_all_sounds_desc"
+            android:src="@drawable/app_icon_blue_64" />
+        <ImageView
+            android:id="@+id/w3x1_iv2"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_weight="1"
+            android:contentDescription="@string/pause_all_alerts_and_alarms_desc"
+            android:src="@drawable/app_icon_blue_64" />
+		<ImageView
+		    android:id="@+id/w3x1_iv3"
+		    android:layout_width="64dp"
+		    android:layout_height="64dp"
+		    android:layout_gravity="center_vertical|center_horizontal"
+		    android:layout_weight="1"
+		    android:contentDescription="@string/override_alert_volume_desc"
+		    android:src="@drawable/app_icon_blue_64" />
+    </LinearLayout>
+</LinearLayout>

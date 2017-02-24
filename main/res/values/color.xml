@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- OurDir shade of blue -->
+    <color name="native_dark_blue">#ff267799</color>
+
+</resources>

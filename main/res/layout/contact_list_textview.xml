@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/clt_main_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/background_light"
+                android:orientation="horizontal"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:paddingTop="8dp"
+                tools:context=".ContactActiveFragment" >
+
+    <!-- ListRow Left sied Thumbnail image -->
+
+    <QuickContactBadge
+        android:id="@+id/clt_badge"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="8dp"
+        android:src="@drawable/app_icon_blue_64" />
+
+    <ImageView
+        android:id="@+id/clt_favorite"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginRight="8dp"
+        android:layout_toRightOf="@id/clt_badge"
+        android:src="@drawable/favorite_off_holo_light"
+        android:visibility="visible"
+        android:contentDescription="@string/cd_favorite_indicator"/>
+
+    <TextView
+        android:id="@+id/clt_name"
+        android:textIsSelectable="true"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/clt_favorite"
+        android:gravity="bottom|left"
+        android:text="@string/name_label"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="18sp" />
+
+    <com.aldersonet.automatonalert.Util.ImageViewCheckBox
+        android:id="@+id/clt_checkbox"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/clt_badge"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:src="@drawable/ic_check_box_outline_blank_grey"
+        />
+
+    <LinearLayout
+        android:id="@+id/clt_types_linear"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/clt_name"
+        android:layout_toRightOf="@id/clt_favorite" >
+
+        <ImageView
+            android:id="@+id/clt_text"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="left|bottom"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:src="@drawable/android_messages_grey_64"
+            android:contentDescription="@string/text_ringtone_label"/>
+
+        <ImageView
+            android:id="@+id/clt_phone"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginBottom="8dp"
+            android:layout_marginRight="8dp"
+            android:src="@drawable/android_phone_grey_64"
+            android:contentDescription="@string/phone_ringtone_label"/>
+
+        <ImageView
+            android:id="@+id/clt_email"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="right|bottom"
+            android:layout_marginBottom="8dp"
+            android:layout_marginRight="8dp"
+            android:src="@drawable/android_email_blue_grey_64"
+            android:contentDescription="@string/email_ringtone_label"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

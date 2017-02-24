@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+    <RelativeLayout
+        android:id="@+id/vc_main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/vc_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/title_volume_chooser"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/vc_subtitle"
+            android:textIsSelectable="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/vc_title"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="4dp"
+            android:text="@string/vc_subtitle" />
+
+        <ImageView
+            android:id="@+id/vc_title_separator"
+            android:layout_width="fill_parent"
+            android:layout_height="4dp"
+            android:layout_below="@id/vc_subtitle"
+            android:layout_marginTop="8dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/menu_separator_holo_blue"
+            android:contentDescription="@string/cd_ignore"/>
+
+        <CheckBox
+            android:id="@+id/vc_ringtone_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/vc_title_separator"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/ringtone_label" />
+
+        <ImageView
+            android:id="@+id/vc_ringtone_icon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_below="@id/vc_ringtone_checkbox"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/stat_sys_speakerphone"
+            android:contentDescription="@string/cd_ringtone_volume"/>
+
+        <SeekBar
+            android:id="@+id/vc_ringtone_seeker"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/vc_ringtone_checkbox"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_toRightOf="@id/vc_ringtone_icon"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:longClickable="false"
+            android:max="100" />
+
+        <CheckBox
+            android:id="@+id/vc_notification_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/vc_ringtone_seeker"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/notification_label" />
+
+        <ImageView
+            android:id="@+id/vc_notification_icon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/vc_notification_checkbox"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="8dp"
+            android:scaleType="center"
+            android:src="@drawable/ic_menu_notifications"
+            android:contentDescription="@string/cd_notification_volume"/>
+
+        <SeekBar
+            android:id="@+id/vc_notification_seeker"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/vc_notification_checkbox"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_toRightOf="@id/vc_notification_icon"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:longClickable="false"
+            android:max="100" />
+
+        <CheckBox
+            android:id="@+id/vc_alarms_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/vc_notification_seeker"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/alarm_header" />
+
+        <ImageView
+            android:id="@+id/vc_alarms_icon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/vc_alarms_checkbox"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/stat_notify_alarm"
+            android:contentDescription="@string/cd_alarm_volume"/>
+
+        <SeekBar
+            android:id="@+id/vc_alarms_seeker"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/vc_alarms_checkbox"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_toRightOf="@id/vc_alarms_icon"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:longClickable="false"
+            android:max="100" />
+
+        <CheckBox
+            android:id="@+id/vc_custom_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/vc_alarms_seeker"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/volume_chooser_custom_label" />
+
+        <SeekBar
+            android:id="@+id/vc_custom_seeker"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="false"
+            android:layout_below="@+id/vc_custom_checkbox"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:max="100"
+            android:layout_alignLeft="@+id/vc_alarms_seeker"/>
+
+    </RelativeLayout>
+</ScrollView>

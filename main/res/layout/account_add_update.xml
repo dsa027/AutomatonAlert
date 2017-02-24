@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            tools:context=".AccountAddUpdateActivity">
+
+            <LinearLayout
+                android:id="@+id/linearLayout1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:focusableInTouchMode="true"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/asm_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:text="@string/asm_instructions1_note"
+                    android:textColor="@android:color/black"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_gravity="center_horizontal"
+                    />
+
+                <TextView
+                    android:id="@+id/asm_header2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/asm_instructions2_note"
+                    android:textColor="@android:color/holo_blue_dark"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_gravity="center_horizontal"
+                    />
+
+                <LinearLayout
+                    android:id="@+id/asm_auth_info_layout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:orientation="vertical" >
+
+                    <EditText android:inputType="textEmailAddress"
+                              android:id="@+id/asm_email_edittext"
+                              android:layout_height="wrap_content"
+                              android:hint="@string/email_example"
+                              android:layout_width="fill_parent" />
+                    <EditText
+                        android:id="@+id/asm_password_edittext"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/password_label"
+                        android:inputType="textPassword"
+                        android:layout_width="fill_parent" />
+                    <EditText
+                        android:id="@+id/asm_imap_server_edittext"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/imap_server_example"
+                        android:inputType="textUri"
+                        android:layout_marginBottom="8dp">
+                        <requestFocus></requestFocus>
+                    </EditText>
+
+                    <LinearLayout android:id="@+id/linearlayout1"
+                                  android:layout_height="wrap_content"
+                                  android:layout_width="fill_parent">
+
+                        <Button android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="left"
+                                android:background="@drawable/button_flat"
+                                android:padding="4dp"
+                                android:text="@string/find_server_label"
+                                android:id="@+id/asm_findserver_button"
+                                android:textColor="#000000" />
+
+                        <TextView
+                            android:id="@+id/cl_title"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" />
+
+                        <Button android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/next_label"
+                                android:layout_gravity="right"
+                                android:id="@+id/asm_next_button"
+                                android:background="@drawable/button_flat"
+                                android:padding="4dp"
+                                android:textColor="#000000" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical"
+                          android:id="@+id/linearLayout2"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content" >
+
+                <!--TextView
+                    android:id="@+id/asm_find_server_label"
+                    android:textIsSelectable="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:bufferType="spannable"
+                    android:text="@string/account_add_update_imap_explanation2"
+                    android:textColor="@color/holo_blue_dark"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="16dp"/-->
+
+                <TextView
+                    android:id="@+id/asm_find_server_http"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:bufferType="spannable"
+                    android:text="@string/find_server_web_search_label"
+                    android:textColor="@android:color/holo_blue_dark"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/underscore"
+                    android:layout_marginBottom="16dp"/>
+
+                <TextView
+                    android:id="@+id/asm_secure_imap_only_label"
+                    android:textIsSelectable="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:bufferType="spannable"
+                    android:textStyle="bold|italic"
+                    android:text="@string/account_add_update_imap_explanation1"
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+    <!-- The navigation drawer -->
+    <ListView android:id="@+id/left_drawer"
+              android:layout_width="240dp"
+              android:layout_height="match_parent"
+              android:layout_gravity="start"
+              android:choiceMode="singleChoice"
+              android:divider="@android:color/transparent"
+              android:dividerHeight="0dp"
+              android:background="#111"/>
+</android.support.v4.widget.DrawerLayout>

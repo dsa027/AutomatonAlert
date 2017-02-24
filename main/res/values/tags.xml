@@ -1,0 +1,4 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <item name="TAG_VIEWHOLDER" type="id">0</item>
+    <item name="TAG_POSITION" type="id">99</item>
+</resources>

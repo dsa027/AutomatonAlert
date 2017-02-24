@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="MessageListItemIcon">
+        <item name="android:layout_width">32dp</item>
+        <item name="android:layout_height">32dp</item>
+        <item name="android:textColor">#00FF00</item>
+        <item name="android:typeface">normal</item>
+        <item name="android:background">@android:color/background_light</item>
+    </style>
+
+    <!-- _elv
+   	<style name="elv_fade_animation">
+		<item name="@android:windowEnterAnimation">@anim/elv_popup_show</item>
+		<item name="@android:windowExitAnimation">@anim/elv_popup_hide</item>
+	</style>
+
+    <style name="SectionHeader" parent="android:Widget.TextView">
+        <item name="android:drawableBottom">@drawable/elv_section_header</item>
+        <item name="android:drawablePadding">4dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:paddingLeft">4dp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/elv_section_header</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    </_elv -->
+
+</resources>

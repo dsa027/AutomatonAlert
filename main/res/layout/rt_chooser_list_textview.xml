@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/pcli_root"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@android:color/background_light"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/pcli_icon"
+        android:layout_width="48dip"
+        android:layout_height="48dip"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="8dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/app_icon_blue_64"
+        android:contentDescription="@string/icon_label"/>
+
+    <TextView
+        android:id="@+id/pcli_label"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignBottom="@+id/pcli_icon"
+        android:layout_toRightOf="@+id/pcli_icon"
+        android:gravity="bottom"
+        android:text="App Label"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/pcli_full_width"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/pcli_icon"
+        android:layout_marginLeft="8dp"
+        android:gravity="bottom"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/pcli_package"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pcli_label"
+        android:layout_toRightOf="@+id/pcli_icon"
+        android:gravity="bottom"
+        android:text="package"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/pcli_app"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pcli_package"
+        android:layout_toRightOf="@+id/pcli_icon"
+        android:gravity="bottom"
+        android:text="class"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/pcli_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:gravity="bottom"
+        android:visibility="gone" />
+
+</RelativeLayout>

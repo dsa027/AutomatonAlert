@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mltn_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/background_light"
+    android:descendantFocusability="blocksDescendants"
+    tools:context=".MessageListActivity" >
+
+    <TextView
+        android:id="@+id/mltn_date_received"
+        android:textIsSelectable="true"
+        android:layout_width="wrap_content"
+        android:layout_height="18dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="4dp"
+        android:gravity="right"
+        android:lines="1"
+        android:maxLines="1"
+        android:textSize="12sp" />
+
+    <ImageView
+        android:id="@+id/mltn_top_row_icons_rightmost"
+        android:layout_width="1dp"
+        android:layout_height="18dp"
+        android:layout_alignBottom="@id/mltn_date_received"
+        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="4dp"
+        android:layout_toLeftOf="@id/mltn_date_received"
+        android:layout_toStartOf="@id/mltn_date_received"
+        android:contentDescription="@string/cd_ignore"/>
+
+    <ImageView
+        android:id="@+id/mltn_top_row_icons_snooze"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_toLeftOf="@id/mltn_top_row_icons_rightmost"
+        android:src="@drawable/ic_snooze"
+        android:contentDescription="@string/cd_is_a_snoozed_alarm_indicator"/>
+
+    <ImageView
+        android:id="@+id/mltn_top_row_icons_repeat"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_toLeftOf="@id/mltn_top_row_icons_snooze"
+        android:src="@drawable/ic_repeat"
+        android:contentDescription="@string/cd_is_a_repeated_alarm_indicator"/>
+
+    <ImageView
+        android:id="@+id/mltn_top_row_icons_alarm"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_alignBottom="@id/mltn_date_received"
+        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_toLeftOf="@id/mltn_top_row_icons_repeat"
+        android:src="@drawable/ic_alarm_clock_white_holo_blue"
+        android:contentDescription="@string/cd_has_an_alarm_indicator"/>
+
+    <ImageView
+        android:id="@+id/mltn_top_row_icons_source"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_alignBottom="@id/mltn_date_received"
+        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_toLeftOf="@id/mltn_top_row_icons_alarm"
+        android:src="@drawable/android_email_blue_blue_48"
+        android:contentDescription="@string/cd_alert_list_email_text_indicator"/>
+
+    <ImageView
+        android:id="@+id/mltn_top_row_icons_leftmost"
+        android:layout_width="1dp"
+        android:layout_height="18dp"
+        android:layout_alignBottom="@id/mltn_date_received"
+        android:layout_marginBottom="2dp"
+        android:layout_toLeftOf="@id/mltn_top_row_icons_source"
+        android:contentDescription="@string/cd_ignore"/>
+
+    <ImageView
+        android:id="@+id/mltn_top_separator"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_alignLeft="@id/mltn_top_row_icons_leftmost"
+        android:layout_below="@id/mltn_top_row_icons_rightmost"
+        android:scaleType="fitXY"
+        android:src="@drawable/menu_separator_black"
+        android:contentDescription="@string/cd_ignore"/>
+
+    <ImageView
+        android:id="@+id/mltn_delete"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/mltn_top_separator"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="4dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/delete_bin_app_blue"
+        android:contentDescription="@string/delete_label"/>
+
+    <ImageView
+        android:id="@+id/mltn_expander"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/mltn_top_separator"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="4dp"
+        android:background="#f1f1f1"
+        android:scaleType="matrix"
+        android:src="@drawable/expander_open_holo_light"
+        android:visibility="gone"
+        android:contentDescription="@string/cd_expland_collapse"/>
+
+    <QuickContactBadge
+        android:id="@+id/mltn_contact"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/mltn_textview_line_1"
+        android:textIsSelectable="true"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_toEndOf="@id/mltn_contact"
+        android:layout_toRightOf="@id/mltn_contact"
+        android:layout_toStartOf="@id/mltn_top_row_icons_leftmost"
+        android:layout_toLeftOf="@id/mltn_top_row_icons_leftmost"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/mltn_textview_line_2"
+        android:textIsSelectable="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/mltn_textview_line_1"
+        android:layout_below="@id/mltn_textview_line_1"
+        android:layout_toRightOf="@id/mltn_contact"
+        android:layout_toStartOf="@id/mltn_delete"
+        android:layout_toLeftOf="@id/mltn_delete"
+        android:ellipsize="marquee"
+        android:lines="1"
+        android:maxLines="1"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@android:color/black" />
+
+    <GridLayout
+        android:id="@+id/mltn_repeats_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/mltn_textview_line_1"
+        android:layout_below="@id/mltn_textview_line_1"
+        android:layout_toRightOf="@id/mltn_contact"
+        android:layout_toStartOf="@id/mltn_delete"
+        android:layout_toLeftOf="@id/mltn_delete"
+        android:background="@drawable/list_border"
+        android:padding="4dp"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/mltn_repeats_every_header"
+            android:textIsSelectable="true"
+            android:layout_width="wrap_content"
+            android:layout_column="1"
+            android:layout_columnSpan="1"
+            android:layout_gravity="right"
+            android:layout_marginRight="8dp"
+            android:layout_row="1"
+            android:layout_rowSpan="1"
+            android:text="@string/every_colon_label"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/mltn_repeats_every"
+            android:textIsSelectable="true"
+            android:layout_column="2"
+            android:layout_columnSpan="1"
+            android:layout_gravity="left"
+            android:layout_row="1"
+            android:layout_rowSpan="1"
+            android:text="@string/n_slash_a_label"
+            android:textColor="@android:color/holo_blue_dark" />
+
+        <TextView
+            android:id="@+id/mltn_repeats_next_header"
+            android:textIsSelectable="true"
+            android:layout_column="1"
+            android:layout_columnSpan="1"
+            android:layout_gravity="right"
+            android:layout_marginRight="8dp"
+            android:layout_row="2"
+            android:layout_rowSpan="1"
+            android:text="@string/next_colon_label"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/mltn_repeats_next"
+            android:textIsSelectable="true"
+            android:layout_column="2"
+            android:layout_columnSpan="1"
+            android:layout_gravity="left"
+            android:layout_row="2"
+            android:layout_rowSpan="1"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@android:color/holo_blue_dark" />
+
+        <TextView
+            android:id="@+id/mltn_repeats_orig_header"
+            android:textIsSelectable="true"
+            android:layout_column="1"
+            android:layout_columnSpan="1"
+            android:layout_gravity="right"
+            android:layout_marginRight="8dp"
+            android:layout_row="3"
+            android:layout_rowSpan="1"
+            android:text="@string/original_colon_label" />
+
+        <TextView
+            android:id="@+id/mltn_repeats_orig"
+            android:textIsSelectable="true"
+            android:layout_column="2"
+            android:layout_columnSpan="1"
+            android:layout_gravity="left"
+            android:layout_row="3"
+            android:layout_rowSpan="1"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/mltn_repeats_last_header"
+            android:textIsSelectable="true"
+            android:layout_column="1"
+            android:layout_columnSpan="1"
+            android:layout_gravity="right"
+            android:layout_marginRight="8dp"
+            android:layout_row="4"
+            android:layout_rowSpan="1"
+            android:text="@string/last_colon_label" />
+
+        <TextView
+            android:id="@+id/mltn_repeats_last"
+            android:textIsSelectable="true"
+            android:layout_column="2"
+            android:layout_columnSpan="1"
+            android:layout_gravity="left"
+            android:layout_row="4"
+            android:layout_rowSpan="1" />
+
+        <TextView
+            android:id="@+id/mltn_repeats_repeat_number_header"
+            android:textIsSelectable="true"
+            android:layout_column="1"
+            android:layout_columnSpan="1"
+            android:layout_gravity="right"
+            android:layout_marginRight="8dp"
+            android:layout_row="5"
+            android:layout_rowSpan="1"
+            android:text="@string/repeat_hash_colon_label" />
+
+        <TextView
+            android:id="@+id/mltn_repeats_repeat_number"
+            android:textIsSelectable="true"
+            android:layout_column="2"
+            android:layout_columnSpan="1"
+            android:layout_gravity="left"
+            android:layout_row="5"
+            android:layout_rowSpan="1" />
+
+    </GridLayout>
+
+    <TextView
+        android:id="@+id/mltn_remainder"
+        android:textIsSelectable="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/mltn_textview_line_2"
+        android:layout_below="@id/mltn_textview_line_2"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="2dp"
+        android:layout_toStartOf="@id/mltn_delete"
+        android:layout_toLeftOf="@id/mltn_delete"
+        android:textColor="@android:color/black" />
+
+    <ImageView
+        android:id="@+id/sawru_alarm_separator"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_alignLeft="@id/mltn_remainder"
+        android:layout_alignRight="@id/mltn_remainder"
+        android:layout_below="@id/mltn_remainder"
+        android:layout_marginBottom="4dp"
+        android:layout_marginTop="1dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/menu_separator_black"
+        android:contentDescription="@string/cd_icon_separator"/>
+
+    <ImageView
+        android:id="@+id/mltn_gotoSource"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignLeft="@id/mltn_remainder"
+        android:layout_below="@id/sawru_alarm_separator"
+        android:layout_toRightOf="@id/mltn_contact"
+        android:src="@drawable/android_email_blue_blue_64"
+        android:contentDescription="@string/show_message_label"/>
+
+    <ImageView
+        android:id="@+id/mltn_alarm"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/sawru_alarm_separator"
+        android:layout_marginLeft="16dp"
+        android:layout_toRightOf="@id/mltn_gotoSource"
+        android:src="@drawable/ic_alarm_clock_holo_blue"
+        android:contentDescription="@string/cd_set_slash_edit_alarm"/>
+
+    <TextView
+        android:id="@+id/mltn_alarm_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/mltn_alarm"
+        android:layout_below="@id/sawru_alarm_separator"
+        android:layout_marginLeft="8dp"
+        android:layout_toRightOf="@id/mltn_alarm"
+        android:lines="1"
+        android:maxLines="1"
+        android:textColor="@android:color/holo_blue_dark" />
+
+    <TextView
+        android:id="@+id/mltn_alarm_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/mltn_alarm"
+        android:layout_alignLeft="@id/mltn_alarm_date"
+        android:layout_below="@id/mltn_alarm_date"
+        android:layout_toRightOf="@id/mltn_alarm"
+        android:lines="1"
+        android:maxLines="1"
+        android:text="@string/cd_set_reminder"
+        android:textColor="@android:color/holo_blue_dark" />
+
+    <ImageView
+        android:id="@+id/mltn_save"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignRight="@id/sawru_alarm_separator"
+        android:layout_below="@id/sawru_alarm_separator"
+        android:layout_marginLeft="16dp"
+        android:alpha=".65"
+        android:src="@drawable/ic_menu_save_app_blue"
+        android:contentDescription="@string/save_label"/>
+
+    <View
+        android:id="@+id/mltn_spacer"
+        android:layout_width="1dp"
+        android:layout_height="8dp"
+        android:layout_below="@id/sawru_alarm_separator" />
+
+    <CheckBox
+        android:id="@+id/mltn_checkbox"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/mltn_contact"
+        android:layout_marginLeft="8dp"
+        android:background="@android:color/background_light"
+        android:checked="false" />
+
+    <View
+        android:id="@+id/mltn_alarm_frame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/mltn_alarm"
+        android:layout_alignLeft="@id/mltn_alarm"
+        android:layout_alignTop="@id/mltn_alarm"
+        android:layout_toStartOf="@id/mltn_save"
+        android:layout_toLeftOf="@id/mltn_save"
+        />
+
+</RelativeLayout>

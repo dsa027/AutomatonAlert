@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="com.aldersonet.automatonalert"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.RECEIVE_MMS"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.RECEIVE_WAP_PUSH"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="com.android.vending.BILLING"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false"/>
+
+    <application
+        android:name=".AutomatonAlert"
+        android:allowBackup="true"
+        android:icon="@drawable/app_icon_blue_64"
+        android:label="@string/app_title"
+        android:theme="@android:style/Theme.Holo.Light">
+        <activity
+            android:name=".Activity.ContactFreeFormListActivity"
+            android:configChanges="keyboardHidden|screenSize|orientation"
+            android:label="@string/title_activity_contact_list"
+            android:theme="@style/Theme.AppCompat.Light"
+            android:windowSoftInputMode="stateHidden">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
+
+        <!--meta-data
+            android:name="com.google.android.gms.version"
+            android:value="4030500"/-->
+
+        <activity
+            android:name=".Activity.GetPermissionsActivity"
+            android:label="@string/splash_page"
+            android:theme="@style/Theme.AppCompat.Light">
+        </activity>
+        <activity
+            android:name=".Activity.InitialDeciderActivity"
+            android:theme="@android:style/Theme.NoDisplay">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".Service.AutomatonAlertService"
+            android:exported="false">
+        </service>
+
+        <activity
+            android:name=".Activity.EmailViewerActivity"
+            android:configChanges="keyboardHidden|screenSize"
+            android:excludeFromRecents="true"
+            android:label="@string/message_view_label"
+            android:theme="@style/Theme.AppCompat.Light">
+        </activity>
+
+        <receiver
+            android:name=".Receiver.BootReceiver"
+            android:enabled="true"
+            android:label="Boot Receiver"
+            android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
+            <intent-filter android:label="android.intent.action.BOOT_COMPLETED">
+                <action android:name="android.intent.action.BOOT_COMPLETED">
+                </action>
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".Receiver.AlertReceiver"
+            android:enabled="true"
+            android:label="Alert Receiver">
+            <intent-filter
+                android:label="com.aldersonet.automatonalert.ALERT_RECEIVER"
+                android:priority="100">
+
+                <!-- action android:name="android.net.conn.BACKGROUND_DATA_SETTING_CHANGED" / -->
+                <action android:name="com.aldersonet.automatonalert.Util.message.ACTION_GOTO_TEXT_PHONE_EMAIL"/>
+                <action android:name="com.aldersonet.automatonalert.Alert.ALARM_ALERT_EVENT_RECEIVER"/>
+                <action android:name="com.aldersonet.automatonalert.Alert.ACTION_TURN_OFF_ALL_NOTIFICATION_ITEM_SOUNDS"/>
+                <action android:name="com.aldersonet.automatonalert.Alert.ACTION_TURN_OFF_NOTIFICATION_ITEM_SOUND"/>
+                <action android:name="com.aldersonet.automatonalert.Mail.message.ACTION_EMAIL_CHECK_MAIL"/>
+                <action android:name="com.aldersonet.automatonalert.message.ACTION_FOREGROUND_BACKGROUND"/>
+                <action android:name="com.aldersonet.automatonalert.Alert.NOOP"/>
+                <action android:name="com.aldersonet.automatonalert.Utils.WIDGET_UPDATE_2X1"/>
+                <action android:name="com.aldersonet.automatonalert.Utils.WIDGET_UPDATE_3X1"/>
+                <action android:name="com.aldersonet.automatonalert.Utils.WIDGET_ALL_SILENT_2X1"/>
+                <action android:name="com.aldersonet.automatonalert.Utils.WIDGET_ALL_SILENT_3X1"/>
+                <action android:name="com.aldersonet.automatonalert.Utils.WIDGET_PAUSE_ALERT_ALARM_2X1"/>
+                <action android:name="com.aldersonet.automatonalert.Utils.WIDGET_PAUSE_ALERT_ALARM_3X1"/>
+                <action android:name="com.aldersonet.automatonalert.Utils.WIDGET_OVERRIDE_VOL_TOGGLE_3X1"/>
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".Activity.AlarmVisualActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:excludeFromRecents="true"
+            android:label="Respond to Alert"
+            android:launchMode="singleTop"
+            android:noHistory="true"
+            android:showOnLockScreen="true"
+            android:theme="@android:style/Theme.Black.NoTitleBar">
+        </activity>
+
+        <receiver
+            android:name=".Receiver.SmsReceiver"
+            android:enabled="true"
+            android:label="SMS Receiver">
+            <intent-filter
+                android:label="android.provider.Telephony.SMS_RECEIVED"
+                android:priority="1000">
+                <action android:name="android.provider.Telephony.SMS_RECEIVED"/>
+            </intent-filter>
+            <intent-filter
+                android:label="android.provider.Telephony.WAP_PUSH_RECEIVED"
+                android:priority="1000">
+                <action android:name="android.provider.Telephony.WAP_PUSH_RECEIVED"/>
+
+                <data android:mimeType="application/vnd.wap.mms-message"/>
+            </intent-filter>
+        </receiver>
+
+        <provider
+            android:name=".Provider.AutomatonAlertProvider"
+            android:authorities="com.aldersonet.provider.automatonalert"
+            android:exported="false"
+            android:label="Data Provider">
+        </provider>
+
+        <activity
+            android:name=".Activity.AccountAddUpdateActivity"
+            android:configChanges="keyboardHidden|screenSize"
+            android:label="Account Setup"
+            android:theme="@style/Theme.AppCompat.Light">
+        </activity>
+
+        <receiver
+            android:name=".Widget.Widget2x1"
+            android:enabled="true"
+            android:label="@string/widget_title_2x1">
+            <intent-filter
+                android:label="android.appwidget.action.APPWIDGET_UPDATE"
+                android:priority="100">
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_2x1"/>
+        </receiver>
+        <!--
+        receiver
+            android:name=".Util.Widget3x1"
+            android:enabled="true"
+            android:label="AutomatonAlert 3x1" >
+            <intent-filter
+                android:label="android.appwidget.action.APPWIDGET_UPDATE"
+                android:priority="100" >
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_3x1" />
+        </receiver
+        -->
+
+        <activity
+            android:name=".Activity.HelpActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="Help"
+            android:theme="@style/Theme.AppCompat.Light">
+        </activity>
+        <activity
+            android:name=".Activity.RTUpdateActivity"
+            android:configChanges="keyboardHidden|screenSize|orientation"
+            android:label="@string/title_activity_ringtone_list"
+            android:theme="@style/Theme.AppCompat.Light">
+        </activity>
+        <activity
+            android:name=".Activity.AlertListActivity"
+            android:configChanges="keyboardHidden|screenSize"
+            android:label="Alert List"
+            android:theme="@style/Theme.AppCompat.Light">
+        </activity>
+        <activity
+            android:name=".Activity.DummyForScreenWakeActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:excludeFromRecents="true"
+            android:label="Alert"
+            android:noHistory="true"
+            android:theme="@android:style/Theme.Black.NoTitleBar">
+        </activity>
+        <activity
+            android:name=".Activity.SetAlertActivity"
+            android:configChanges="keyboardHidden|screenSize|orientation"
+            android:label="@string/title_activity_set_alert_activity_new"
+            android:theme="@style/Theme.AppCompat.Light">
+        </activity>
+        <activity
+            android:name=".Activity.FragmentHostActivity"
+            android:configChanges="keyboardHidden|screenSize|orientation"
+            android:label="@string/title_activity_fragment_wrapper"
+            android:theme="@style/Theme.AppCompat.Light">
+        </activity>
+        <activity
+            android:name=".Activity.InAppPurchasesActivity"
+            android:configChanges="keyboardHidden|screenSize|orientation"
+            android:label="@string/purchases"
+            android:theme="@style/Theme.AppCompat.Light">
+        </activity>
+        <activity
+            android:name=".Activity.TakeATourActivity"
+            android:label="@string/title_activity_take_atour"
+            android:theme="@style/Theme.AppCompat.Light">
+        </activity>
+        <activity
+            android:name=".Activity.GmailActivity"
+            android:label="@string/title_activity_gmail">
+        </activity>
+    </application>
+
+</manifest>

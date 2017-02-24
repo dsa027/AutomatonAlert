@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/fflt_main_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/background_light"
+                android:orientation="horizontal"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:paddingTop="8dp"
+                tools:context=".FreeFormListFragment"
+    >
+
+    <ImageView
+        android:id="@+id/fflt_phrase_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="2dp"
+        android:src="@drawable/free_form_icon_holo_blue_36"
+        android:contentDescription="@string/cd_ignore"
+        />
+
+    <TextView
+        android:id="@+id/fflt_phrase"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/fflt_phrase_icon"
+        android:layout_alignTop="@id/fflt_phrase_icon"
+        android:layout_marginBottom="2dp"
+        android:gravity="bottom|left"
+        android:text="Phrase"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@android:color/holo_blue_dark"
+        />
+
+    <!--ImageView
+        android:id="@+id/fflt_headers_icon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_below="@id/fflt_phrase"
+        android:layout_alignRight="@id/fflt_phrase_icon"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/filter_holo_blue_48"
+        android:contentDescription="@string/cd_ignore"
+        /-->
+
+    <TextView
+        android:id="@+id/fflt_headers"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:layout_alignLeft="@id/fflt_phrase"
+        android:layout_below="@id/fflt_phrase"
+        android:gravity="bottom|left"
+        android:text="Headers"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="#999999"
+        />
+
+    <com.aldersonet.automatonalert.Util.ImageViewCheckBox
+        android:id="@+id/fflt_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fflt_phrase_icon"
+        android:layout_alignParentLeft="true"
+        android:background="@android:color/background_light"
+        />
+
+    <!--ImageView
+        android:id="@+id/fflt_accounts_icon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_alignRight="@id/fflt_phrase_icon"
+        android:layout_below="@id/fflt_headers"
+        android:src="@drawable/android_email_blue_blue_48"
+        android:visibility="visible"
+        android:contentDescription="@string/cd_ignore"
+        /-->
+
+    <TextView
+        android:id="@+id/fflt_accounts"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/fflt_phrase"
+        android:layout_marginBottom="8dp"
+        android:layout_below="@id/fflt_headers"
+        android:gravity="bottom|left"
+        android:text="Accounts"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="#999999"
+        android:maxLines="10"
+        android:minLines="1"
+        />
+
+</RelativeLayout>

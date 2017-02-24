@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_blue_dark"
+        >
+
+        <TextView
+            android:id="@+id/prev"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="2dp"
+            android:layout_marginLeft="2dp"
+            android:text="@string/less_than_symbol_prev_label"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            />
+
+        <TextView
+            android:id="@+id/next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="2dp"
+            android:layout_marginRight="2dp"
+            android:text="@string/next_greater_than_symbol_label"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            />
+
+        <LinearLayout
+            android:id="@+id/tp3_dots"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:layout_centerHorizontal="true"
+            >
+            <ImageView
+                android:id="@+id/tp3_dot_page_1"
+                android:layout_width="10dp"
+                android:layout_height="16dp"
+                android:src="@drawable/tour_dots_off"
+                android:contentDescription="@string/cd_ignore"/>
+            <ImageView
+                android:id="@+id/tp3_dot_page_2"
+                android:layout_width="10dp"
+                android:layout_height="16dp"
+                android:src="@drawable/tour_dots_off"
+                android:contentDescription="@string/cd_ignore"/>
+            <ImageView
+                android:id="@+id/tp3_dot_page_3"
+                android:layout_width="10dp"
+                android:layout_height="16dp"
+                android:src="@drawable/tour_dots_on"
+                android:contentDescription="@string/page_3_label"/>
+            <ImageView
+                android:id="@+id/tp3_dot_page_4"
+                android:layout_width="10dp"
+                android:layout_height="16dp"
+                android:src="@drawable/tour_dots_off"
+                android:contentDescription="@string/cd_ignore"/>
+            <ImageView
+                android:id="@+id/tp3_dot_page_5"
+                android:layout_width="10dp"
+                android:layout_height="16dp"
+                android:src="@drawable/tour_dots_off"
+                android:contentDescription="@string/cd_ignore"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tp3_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tp3_dots"
+            android:layout_marginBottom="12dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:text="The Free-Form Tab and\nEdit Screen"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#ffffff"
+            android:textSize="24sp"
+            />
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tp3_title"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_centerHorizontal="true"
+            android:adjustViewBounds="true"
+            android:contentDescription="Free-Form List"/>
+
+        <View
+            android:id="@+id/tp3_separator"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:layout_below="@id/image"
+            android:background="#e5e5e5"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tp3_separator"
+            android:layout_alignParentBottom="true"
+            android:background="#ffffff"
+            >
+
+            <TextView
+                android:id="@+id/tp3_description_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/tour_page_free_form_list_description_title"
+                android:textColor="@android:color/holo_blue_dark"
+                />
+
+            <TextView
+                android:id="@+id/tp3_description_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tp3_description_title"
+                android:gravity="center"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:text="@string/tour_page_free_form_list_description_detail"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@android:color/holo_blue_dark"
+                />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</ScrollView>
