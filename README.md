@@ -1,7 +1,7 @@
 # AutomatonAlert
-###Control Yourself™, Contact Ringtones
+### Control Yourself™, Contact Ringtones
 
-#####Set Ringtones for Text, Phone, Email. 
+##### Set Ringtones for Text, Phone, Email. 
 
 * Contact Ringtones gives you control of your ringtones. Easily set and manage the ringtones of any contact. When that contact texts, calls, or emails, you'll be notified. Very simple.
 
